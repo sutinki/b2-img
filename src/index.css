@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global.css */
+/* 移除所有元素的默认聚焦轮廓 */
+*:focus {
+  outline: none;
+}
+
+/* 定义通用的聚焦可见样式 */
+:where(a, input, select, textarea, button):focus-visible {
+  @apply ring-2 ring-blue-500 ring-opacity-50;
+}
+
+/* 为特定元素添加圆角 */
+:where(a, select, textarea):focus-visible {
+  @apply rounded;
+}
+
+/* 按钮基础样式 */
+.btn {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-600 transition duration-300;
+}
+
+/* 按钮聚焦可见样式 */
+.btn:focus-visible {
+  @apply outline-none;
+}
